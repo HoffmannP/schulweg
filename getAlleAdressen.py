@@ -22,7 +22,7 @@ def isAddress(a):
     return 'search_category' in a and a['search_category'] == '05_Adressen'
 
 def isInStreet(a, street):
-    return 'displaytext' in a and a['displaytext'].startswith(street)
+    return 'displaytext' in a and a['displaytext'].startswith(f'{street} ')
 
 def formatAddress(a):
     return {
@@ -63,7 +63,7 @@ def getStrassen(letter):
         'resultLimit':          500,
         'resultLimitCategory':  5})
 
-    return [a['displaytext'] for a in response.json()["results"][1:] if isStrasse(a)]
+    return [a['displaytext'][:-len(" (Strasse)")] for a in response.json()["results"][1:] if isStrasse(a)]
 
 def getAddresse(address):
     response = requests.get(
@@ -90,14 +90,16 @@ def getAddresse(address):
     return OSM_LongLat(getCoordinateFromBbox(adressen[0]["bbox"]))
 
 def getAllStrassen():
-    strassen = set()
+    strassen = []
     for letter in string.ascii_uppercase:
-        strassen = strassen.union(getStrassen(letter))
-    return [a[:-len(" (Strasse)")] for a in sorted(list(strassen))]
+        for strasse in getStrassen(letter):
+            if strassen not in strassen:
+                yield strassen
+                strassen.append(strassen)
 
 def saveAllStrassen(filename=DEFAULT_STRASSEN_SAVE):
     with open(filename, "w") as f:
-        json.dump(getAllStrassen(), f)
+        json.dump(list(getAllStrassen()), f)
 
 def loadAllStrassen(filename=DEFAULT_STRASSEN_SAVE):
     with open(filename, "r") as f:
@@ -105,24 +107,20 @@ def loadAllStrassen(filename=DEFAULT_STRASSEN_SAVE):
     return strassen
 
 def getAllAdressenFromStrassen(strassen):
-    adressen = []
     for strasse in strassen:
         print(f'{strasse}: ', end='')
         adressenInStrasse = getAdressenInStrasse(strasse)
-        adressen.append(adressenInStrasse)
+        yield adressenInStrasse
         print(f'{len(adressenInStrasse):3d}')
-    return adressen
 
-def saveAllAdressenFromStrassen(strassen, filename=DEFAULT_ADRESSEN_SAVE):
-    with open(filename, "w") as f:
-        json.dump(getAllAdressenFromStrassen(strassen), f)
-
-def loadAllAdressen(filename=DEFAULT_ADRESSEN_SAVE):
-    with open(filename, "r") as f:
-        adressen = json.load(f)
-    return adressen
+def saveAllAdressenFromStrassen(strassen, database):
+    for adresse in getAllAdressenFromStrassen(strassen):
+        database.insert(adresse)
 
 
 if __name__ == '__main__':
-    # saveAllStrassen()
-    saveAllAdressenFromStrassen(loadAllStrassen())
+    import adressDb
+
+    saveAllStrassen()
+    database = adressDb.adressDb()
+    saveAllAdressenFromStrassen(loadAllStrassen(), database)

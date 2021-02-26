@@ -75,7 +75,10 @@ def next_by_type(start, type):
 
 
 def next(home):
-    start = coordinates.getCoordinate(home)
+    return next_by_coord(coordinates.getCoordinate(home))
+
+
+def next_by_coord(start):
     next_grund = next_by_type(start, 'Grundschulen')
     next_gms = next_by_type(start, 'Gesamtschulen')
     if next_grund["distance"] < next_gms["distance"]:
