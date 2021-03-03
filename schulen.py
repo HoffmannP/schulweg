@@ -1,4 +1,3 @@
-import requests
 import json
 import coordinates
 import sys
@@ -55,42 +54,41 @@ def lookup_coordinates():
 
 all_schools = False
 
-def schools(type):
+def schools(typus):
     if this.all_schools is False:
         with open('schulen.json', "r") as f:
             this.all_schools = json.load(f)
-    return this.all_schools[type]
+    return this.all_schools[typus]
 
 
-def next_by_type(start, type):
-    next = {"distance": 9999999}
-    for school, end in schools(type).items():
-        if coordinates.entfernungLuft(start, end) > next["distance"]:
+def nearest_by_type(start, typus):
+    nearest = {"distance": 9999999}
+    for school, end in schools(typus).items():
+        if coordinates.entfernungLuft(start, end) > nearest["distance"]:
             continue
         distance = coordinates.entfernungFuss(start, end)
-        if distance < next["distance"]:
-            next["distance"] = distance
-            next["name"] = school
-    return next
+        if distance < nearest["distance"]:
+            nearest["distance"] = distance
+            nearest["name"] = school
+    return nearest
 
 
-def next(home):
-    return next_by_coord(coordinates.getCoordinate(home))
+def nearest(home):
+    return nearest_by_coord(coordinates.getCoordinate(home))
 
 
-def next_by_coord(start):
-    next_grund = next_by_type(start, 'Grundschulen')
-    next_gms = next_by_type(start, 'Gesamtschulen')
-    if next_grund["distance"] < next_gms["distance"]:
-        next = {**next_grund, 'typ': 'Grundschulen'}
+def nearest_by_coord(start):
+    nearest_grund = nearest_by_type(start, 'Grundschulen')
+    nearest_gms = nearest_by_type(start, 'Gesamtschulen')
+    if nearest_grund["distance"] < nearest_gms["distance"]:
+        nearest = {**nearest_grund, 'typ': 'Grundschulen'}
     else:
-        next = {**next_gms, 'typ': 'Gesamtschulen'}
+        nearest = {**nearest_gms, 'typ': 'Gesamtschulen'}
     return {
-        'insgesamt': next,
-        'grundschulen': next_grund,
-        'gesamtschulen': next_gms}
+        'insgesamt': nearest,
+        'grundschulen': nearest_grund,
+        'gesamtschulen': nearest_gms}
 
 
 if __name__ == "__main__":
-    import sys
-    print(next(sys.argv[1]))
+    print(nearest(sys.argv[1]))

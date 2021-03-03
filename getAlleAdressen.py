@@ -93,9 +93,9 @@ def getAllStrassen():
     strassen = []
     for letter in string.ascii_uppercase:
         for strasse in getStrassen(letter):
-            if strassen not in strassen:
-                yield strassen
-                strassen.append(strassen)
+            if strasse not in strassen:
+                yield strasse
+                strassen.append(strasse)
 
 def saveAllStrassen(filename=DEFAULT_STRASSEN_SAVE):
     with open(filename, "w") as f:
@@ -108,10 +108,10 @@ def loadAllStrassen(filename=DEFAULT_STRASSEN_SAVE):
 
 def getAllAdressenFromStrassen(strassen):
     for strasse in strassen:
-        print(f'{strasse}: ', end='')
         adressenInStrasse = getAdressenInStrasse(strasse)
-        yield adressenInStrasse
-        print(f'{len(adressenInStrasse):3d}')
+        print(f'{strasse}: {len(adressenInStrasse):3d} Adressen')
+        for adresse in adressenInStrasse:
+            yield adresse
 
 def saveAllAdressenFromStrassen(strassen, database):
     for adresse in getAllAdressenFromStrassen(strassen):
@@ -119,8 +119,8 @@ def saveAllAdressenFromStrassen(strassen, database):
 
 
 if __name__ == '__main__':
-    import adressDb
+    import addressDb
 
     saveAllStrassen()
-    database = adressDb.adressDb()
+    database = addressDb.adressDb()
     saveAllAdressenFromStrassen(loadAllStrassen(), database)
