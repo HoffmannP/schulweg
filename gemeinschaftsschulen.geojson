@@ -1,0 +1,95 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Werkstattschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.614234322930455, 50.881756925056365]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "An der Trie\u00dfnitz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.573677912535045, 50.896607523088264]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Galileo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.58118850013942, 50.89298420234315]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Jenaplan-Schule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.569128751198047, 50.92121406171809]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kaleidoskop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.605653699970606, 50.88422513699754]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Kulturanum"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.602503273552054, 50.88278410358802]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Lobdeburgschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.613065798958342, 50.89097171269025]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Montessorischule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.598482847817813, 50.94444369962377]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Wenigenjena"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.600979410077302, 50.93616001265615]
+            }
+        }
+    ]
+}

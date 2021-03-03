@@ -1,0 +1,86 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Friedrich-Schiller"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.573178873552822, 50.8972351108861]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Heinrich-Heine"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.597758753845596, 50.93422355640527]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Nordschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.589081031355247, 50.93885143007399]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Saaletalschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.605653699970606, 50.88422513699754]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Schule am Rautal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.612820258429153, 50.95339266303772]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "S\u00fcdschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.56778657548223, 50.92158417742604]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Talschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.604608262305707, 50.92132278624502]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Westschule"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [11.573790273846257, 50.93138481187869]
+
+            }
+        }
+    ]
+}

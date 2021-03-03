@@ -4,7 +4,7 @@ import sys
 
 this = sys.modules[__name__]
 
-def lookup_coordinates():
+def lookup_schools():
     schulenInJena = {
         "staatliche": {
             "Grundschulen": {
@@ -16,7 +16,7 @@ def lookup_coordinates():
                 "Südschule": "Döbereinerstraße 20",
                 "Talschule": "Ziegenhainer Straße 52",
                 "Westschule": "August-Bebel-Straße 23"},
-            "Gesamtschulen": {
+            "Gemeinschaftsschulen": {
                 "Werkstattschule": "Emil-Wölk-Str. 11",
                 "An der Trießnitz": "Hugo-Schrade-Straße 1",
                 "Galileo": "Oßmaritzer Straße 12",
@@ -32,32 +32,37 @@ def lookup_coordinates():
                 "Ev. Grundschule": "Kahlaische Straße 9",
                 "SteinMalEins (Lobeda)": "Susanne-Bohl-Straße 2",
                 "SteinMalEins (Paradies)": "Burgauer Weg 1a"},
-            "Gesamtschulen": {
+            "Gemeinschaftsschulen": {
                 "Leonardo": "Marie-Juchacz-Straße 1"}}}
 
     Grundschulen = {}
     for schule, addresse in schulenInJena["staatliche"]["Grundschulen"].items():
         Grundschulen[schule] = coordinates.getCoordinate(addresse)
 
-    Gesamtschulen = {}
-    for schule, addresse in schulenInJena["staatliche"]["Gesamtschulen"].items():
-        Gesamtschulen[schule] = coordinates.getCoordinate(addresse)
+    Gemeinschaftsschulen = {}
+    for schule, addresse in schulenInJena["staatliche"]["Gemeinschaftsschulen"].items():
+        Gemeinschaftsschulen[schule] = coordinates.getCoordinate(addresse)
 
     Schulen = {
         "Grundschulen": Grundschulen,
-        "Gesamtschulen": Gesamtschulen}
+        "Gemeinschaftsschulen": Gemeinschaftsschulen}
 
-    with open("schulen.json", "w") as f:
-        json.dump(Schulen, f)
     return Schulen
+
+def save_schools():
+    with open("schulen.json", "w") as f:
+        json.dump(lookup_schools(), f)
 
 
 all_schools = False
 
-def schools(typus):
+def schools(typus, create=False):
     if this.all_schools is False:
-        with open('schulen.json', "r") as f:
-            this.all_schools = json.load(f)
+        if create:
+            this.all_schools = lookup_schools()
+        else:
+            with open('schulen.json', "r") as f:
+                this.all_schools = json.load(f)
     return this.all_schools[typus]
 
 
@@ -79,15 +84,15 @@ def nearest(home):
 
 def nearest_by_coord(start):
     nearest_grund = nearest_by_type(start, 'Grundschulen')
-    nearest_gms = nearest_by_type(start, 'Gesamtschulen')
+    nearest_gms = nearest_by_type(start, 'Gemeinschaftsschulen')
     if nearest_grund["distance"] < nearest_gms["distance"]:
         nearest = {**nearest_grund, 'typ': 'Grundschulen'}
     else:
-        nearest = {**nearest_gms, 'typ': 'Gesamtschulen'}
+        nearest = {**nearest_gms, 'typ': 'Gemeinschaftsschulen'}
     return {
         'insgesamt': nearest,
         'grundschulen': nearest_grund,
-        'gesamtschulen': nearest_gms}
+        'gemeinschaftsschulen': nearest_gms}
 
 
 if __name__ == "__main__":
