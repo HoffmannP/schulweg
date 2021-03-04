@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schulbezirke in Jena</title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <style>
+        #map {
+            height: 90vh;
+            margin: 5vh 5vw;
+        }
+    </style>
+    <script src="leaflet.js"></script>
+    <link rel="preload" href="gms.geojson" as="fetch">
+    <link rel="preload" href="grund.geojson" as="fetch">
+    <link rel="preload" href="alle.geojson" as="fetch">
+    <link rel="preload" href="standorte.geojson" as="fetch">
+</head>
+<body>
+    <div id="map"></div>
+</body>
+<script src="script.js"></script>
+</html>

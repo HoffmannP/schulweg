@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "standorte",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Friedrich-Schiller" }, "geometry": { "type": "Point", "coordinates": [ 11.573178873552822, 50.897235110886101 ] } },
+{ "type": "Feature", "properties": { "name": "Heinrich-Heine" }, "geometry": { "type": "Point", "coordinates": [ 11.597758753845596, 50.934223556405271 ] } },
+{ "type": "Feature", "properties": { "name": "Nordschule" }, "geometry": { "type": "Point", "coordinates": [ 11.589081031355247, 50.938851430073989 ] } },
+{ "type": "Feature", "properties": { "name": "Saaletalschule" }, "geometry": { "type": "Point", "coordinates": [ 11.605653699970606, 50.884225136997543 ] } },
+{ "type": "Feature", "properties": { "name": "Schule am Rautal" }, "geometry": { "type": "Point", "coordinates": [ 11.612820258429153, 50.953392663037718 ] } },
+{ "type": "Feature", "properties": { "name": "Südschule" }, "geometry": { "type": "Point", "coordinates": [ 11.567786575482231, 50.921584177426041 ] } },
+{ "type": "Feature", "properties": { "name": "Talschule" }, "geometry": { "type": "Point", "coordinates": [ 11.604608262305707, 50.921322786245021 ] } },
+{ "type": "Feature", "properties": { "name": "Westschule" }, "geometry": { "type": "Point", "coordinates": [ 11.573790273846257, 50.931384811878686 ] } }
+]
+}
