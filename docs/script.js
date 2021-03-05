@@ -27,7 +27,7 @@ function colorize (property) {
   })
 }
 
-const map = L.map('map').setView([50.91, 11.59], 12.4)
+const map = L.map('map').setView([50.92, 11.59], 12.4)
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -69,3 +69,11 @@ for (const layer of layers) {
       }
     })
 }
+
+(function () {
+  var t; var i; var e; var n = window; var o = document; var a = arguments; var s = 'script'; var r = ['config', 'track', 'identify', 'visit', 'push', 'call', 'trackForm', 'trackClick']; var c = function () { var t; var i = this; for (i._e = [], t = 0; r.length > t; t++)(function (t) { i[t] = function () { return i._e.push([t].concat(Array.prototype.slice.call(arguments, 0))), i } })(r[t]) }; for (n._w = n._w || {}, t = 0; a.length > t; t++)n._w[a[t]] = n[a[t]] = n[a[t]] || new c(); i = o.createElement(s), i.async = 1, i.src = '//static.woopra.com/js/w.js', e = o.getElementsByTagName(s)[0], e.parentNode.insertBefore(i, e)
+})('woopra')
+woopra.config({
+  domain: 'ichplatz.de'
+})
+woopra.track()

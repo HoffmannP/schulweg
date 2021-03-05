@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Schulbezirke in Jena</title>
+    <title>Schulbereiche in Jena</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="leaflet.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        body {
+            font-family: 'Roboto Slab', serif;
+        }
         #map {
             height: 90vh;
-            margin: 5vh 5vw;
+        }
+        @media(min-device-width: 980px) {
+            .explain {
+                float: left;
+                width: 40%;
+                margin-right: 2%;
+            }
+            #map {
+                width: 58%;
+            }
         }
     </style>
     <script src="leaflet.js"></script>
@@ -14,17 +32,17 @@
     <link rel="preload" href="grund.geojson" as="fetch">
     <link rel="preload" href="alle.geojson" as="fetch">
     <link rel="preload" href="standorte.geojson" as="fetch">
-    <script>
-        (function(){
-            var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
-        })("woopra");
-        woopra.config({
-            domain: 'ichplatz.de'
-        });
-        woopra.track();
-    </script>
 </head>
 <body>
+    <h1>Bereiche nächster Schulnähe</h1>
+    <div class="explain">
+<p>In Jena können Kinder zu Beginn ihrer Schullaufbahn an jeder Grundschule und Gemeinschaftschule mit Grundschulteil angemeldet werden. Sollte z. B. bei einer beliebten Schule - die Zahl Anmeldungen die Zahl der Plätze an der Schule übersteigen, werden die Plätze nach festen Regeln vergeben.</p>
+<p>Zuerst werden Plätze für Kinder mit besonderen Voraussetzungen (z. B. einer Behinderung) vergeben. Diese Gruppe ist aller Erfahrung nach relativ klein. Als Nächstes bekommen die den Platz, für die die gewählte Schule die (wohnort)nächste Schule ist. Danach kommen Kinder mit einem Geschwisterkind, welches bereits an der gewählten Schule ist und danach werden die Plätze an alle verbleibenden Anmeldungen vergeben. Sind während der Zuteilung der Plätze einer Schule an eine Gruppe die Zahl der Plätze erschöpft, wird gelost.</p>
+<p>Die Bestimmung der „nächsten Schule“ erfolgt dabei über die Länge des Fußweges (unabhängig davon, ob der Weg sinnvollerweise zu Fuß zurückgelegt wird). Um den Titel „nächsten Schule“ konkurrieren bei der Anmeldung an einer Grundschule ausschließlich andere (staatliche) Grundschulen, bei der Anmeldung an einer Gemeinschaftschule hingegen alle Grundschulen und Gemeinschaftsschulen mit Grundschulteil.</p>
+<p>Die Karte auf dieser Seite zeigt die Bereiche innerhalb der Stadt Jena, für die eine Schule die nächste Schule ist. Die Karte lässt sich zwischen den einzelnen Schulformen umschalten und wurde mit der freien Routenplanungssoftware <a href="http://project-osrm.org/">OSRM</a> auf der Grundlage des von <a href="https://www.openstreetmap.de/">Open Street Map</a> erstellt. Für einen Hinweis auf Fehler bei der Berechnung oder des Kartenmaterials bin ich dankbar.</p>
+<p>Ich halte nicht das Kriterium der Wohnortnähe, sondern die aktuelle Ausgestaltung für problematisch und unausgereift, diese Karte soll für diese These eine Diskussionsgrundlage bieten.</p>
+<p><a href="mailto:Berengar.Lehr@gmx.de">Berengar Lehr</a>, Jena im März 2021</p>
+    </div>
     <div id="map"></div>
 </body>
 <script src="script.js"></script>
