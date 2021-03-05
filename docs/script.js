@@ -77,3 +77,10 @@ woopra.config({
   domain: 'ichplatz.de'
 })
 woopra.track()
+
+document.querySelector('button.hide').addEventListener('click', e => {
+  document.querySelector('.explain').classList.add('hidden')
+})
+document.querySelector('button.show').addEventListener('click', e => {
+  document.querySelector('.explain').classList.remove('hidden')
+})

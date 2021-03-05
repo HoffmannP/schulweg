@@ -16,6 +16,9 @@
         #map {
             height: 90vh;
         }
+        button {
+            display: none;
+        }
         @media(min-device-width: 980px) {
             .explain {
                 float: left;
@@ -25,6 +28,23 @@
             #map {
                 width: 58%;
             }
+            .explain button.hide {
+                display: inline;
+            }
+            .explain.hidden button.show {
+                display: inline;
+            }
+            .explain.hidden p,
+            .explain.hidden button.hide {
+                display: none;
+            }
+            .explain.hidden {
+                float: none;
+            }
+            .explain.hidden + #map {
+                width: 96%;
+                margin-left: 2%;
+
         }
     </style>
     <script src="leaflet.js"></script>
@@ -36,12 +56,14 @@
 <body>
     <h1>Bereiche nächster Schulnähe</h1>
     <div class="explain">
+<button class="show">Text anzeigen</button>
 <p>In Jena können Kinder zu Beginn ihrer Schullaufbahn an jeder Grundschule und Gemeinschaftschule mit Grundschulteil angemeldet werden. Sollte z. B. bei einer beliebten Schule - die Zahl Anmeldungen die Zahl der Plätze an der Schule übersteigen, werden die Plätze nach festen Regeln vergeben.</p>
 <p>Zuerst werden Plätze für Kinder mit besonderen Voraussetzungen (z. B. einer Behinderung) vergeben. Diese Gruppe ist aller Erfahrung nach relativ klein. Als Nächstes bekommen die den Platz, für die die gewählte Schule die (wohnort)nächste Schule ist. Danach kommen Kinder mit einem Geschwisterkind, welches bereits an der gewählten Schule ist und danach werden die Plätze an alle verbleibenden Anmeldungen vergeben. Sind während der Zuteilung der Plätze einer Schule an eine Gruppe die Zahl der Plätze erschöpft, wird gelost.</p>
 <p>Die Bestimmung der „nächsten Schule“ erfolgt dabei über die Länge des Fußweges (unabhängig davon, ob der Weg sinnvollerweise zu Fuß zurückgelegt wird). Um den Titel „nächsten Schule“ konkurrieren bei der Anmeldung an einer Grundschule ausschließlich andere (staatliche) Grundschulen, bei der Anmeldung an einer Gemeinschaftschule hingegen alle Grundschulen und Gemeinschaftsschulen mit Grundschulteil.</p>
 <p>Die Karte auf dieser Seite zeigt die Bereiche innerhalb der Stadt Jena, für die eine Schule die nächste Schule ist. Die Karte lässt sich zwischen den einzelnen Schulformen umschalten und wurde mit der freien Routenplanungssoftware <a href="http://project-osrm.org/">OSRM</a> auf der Grundlage des von <a href="https://www.openstreetmap.de/">Open Street Map</a> erstellt. Für einen Hinweis auf Fehler bei der Berechnung oder des Kartenmaterials bin ich dankbar.</p>
 <p>Ich halte nicht das Kriterium der Wohnortnähe, sondern die aktuelle Ausgestaltung für problematisch und unausgereift, diese Karte soll für diese These eine Diskussionsgrundlage bieten.</p>
 <p><a href="mailto:Berengar.Lehr@gmx.de">Berengar Lehr</a>, Jena im März 2021</p>
+<button class="hide">Text verbergen</button>
     </div>
     <div id="map"></div>
 </body>
