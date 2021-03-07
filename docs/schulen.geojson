@@ -118,7 +118,7 @@
       "type": "Feature",
       "properties": {
         "name": "Werkstattschule",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -132,7 +132,7 @@
       "type": "Feature",
       "properties": {
         "name": "An der Trießnitz",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -146,7 +146,7 @@
       "type": "Feature",
       "properties": {
         "name": "Galileo",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -160,7 +160,7 @@
       "type": "Feature",
       "properties": {
         "name": "Jenaplan-Schule",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -174,7 +174,7 @@
       "type": "Feature",
       "properties": {
         "name": "Kaleidoskop",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -188,7 +188,7 @@
       "type": "Feature",
       "properties": {
         "name": "Kulturanum",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -202,7 +202,7 @@
       "type": "Feature",
       "properties": {
         "name": "Lobdeburgschule",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -216,7 +216,7 @@
       "type": "Feature",
       "properties": {
         "name": "Montessorischule",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
@@ -230,7 +230,7 @@
       "type": "Feature",
       "properties": {
         "name": "Wenigenjena",
-        "typ": "Grundschule"
+        "typ": "Gemeinschaftsschule"
       },
       "geometry": {
         "type": "Point",
