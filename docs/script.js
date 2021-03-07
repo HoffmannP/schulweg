@@ -1,5 +1,5 @@
-/* global L, woopra */
-import * as L from "./leaflet-src.esm.js"
+/* global woopra */
+import * as L from './leaflet-src.esm.js'
 
 const colormap = {
   'Friedrich-Schiller': '#db2897',
@@ -76,7 +76,7 @@ for (const layer of layers) {
 window.fetch('schulen.geojson')
   .then(r => r.json())
   .then(function (feature) {
-    const l = L.geoJSON(feature, { style: colorize("name") }).addTo(map)
+    const l = L.geoJSON(feature, { style: colorize('name') }).addTo(map)
     l.bindPopup(
       (l) => `${l.feature.properties.typ} ${l.feature.properties.name}`
     )
