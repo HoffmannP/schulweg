@@ -96,4 +96,7 @@ def nearest_by_coord(start):
 
 
 if __name__ == "__main__":
-    print(nearest(sys.argv[1]))
+    if (len(sys.argv)) > 1:
+        print(nearest(sys.argv[1]))
+    else:
+        save_schools()

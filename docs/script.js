@@ -1,4 +1,5 @@
-/* global L */
+/* global L, woopra */
+import * as L from "./leaflet-src.esm.js"
 
 const colormap = {
   'Friedrich-Schiller': '#db2897',
@@ -22,12 +23,15 @@ const colormap = {
 }
 
 function colorize (property) {
-  return feature => ({
-    color: colormap[feature.properties[property]]
+  return (feature) => ({
+    color:
+      feature.properties[property] in colormap
+        ? colormap[feature.properties[property]]
+        : feature.properties[property]
   })
 }
 
-const map = L.map('map').setView([50.92, 11.59], 12.4)
+const map = L.map('map', { zoomSnap: 0.2 }).setView([50.92, 11.59], 12.4)
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
     'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -69,14 +73,19 @@ for (const layer of layers) {
       }
     })
 }
+window.fetch('schulen.geojson')
+  .then(r => r.json())
+  .then(function (feature) {
+    const l = L.geoJSON(feature, { style: colorize("name") }).addTo(map)
+    l.bindPopup(
+      (l) => `${l.feature.properties.typ} ${l.feature.properties.name}`
+    )
+    control.addOverlay(l, 'Schulstandorte')
+  });
 
 (function () {
-  var t; var i; var e; var n = window; var o = document; var a = arguments; var s = 'script'; var r = ['config', 'track', 'identify', 'visit', 'push', 'call', 'trackForm', 'trackClick']; var c = function () { var t; var i = this; for (i._e = [], t = 0; r.length > t; t++)(function (t) { i[t] = function () { return i._e.push([t].concat(Array.prototype.slice.call(arguments, 0))), i } })(r[t]) }; for (n._w = n._w || {}, t = 0; a.length > t; t++)n._w[a[t]] = n[a[t]] = n[a[t]] || new c(); i = o.createElement(s), i.async = 1, i.src = '//static.woopra.com/js/w.js', e = o.getElementsByTagName(s)[0], e.parentNode.insertBefore(i, e)
-})('woopra')
-woopra.config({
-  domain: 'ichplatz.de'
-})
-woopra.track()
+  let t; let i; let e; const n = window; const o = document; const a = arguments; const s = 'script'; const r = ['config', 'track', 'identify', 'visit', 'push', 'call', 'trackForm', 'trackClick']; const c = function () { let t; const i = this; for (i._e = [], t = 0; r.length > t; t++)(function (t) { i[t] = function () { return i._e.push([t].concat(Array.prototype.slice.call(arguments, 0))), i } })(r[t]) }; for (n._w = n._w || {}, t = 0; a.length > t; t++)n._w[a[t]] = n[a[t]] = n[a[t]] || new c(); i = o.createElement(s), i.async = 1, i.src = '//static.woopra.com/js/w.js', e = o.getElementsByTagName(s)[0], e.parentNode.insertBefore(i, e)
+})('woopra'); woopra.config({ domain: 'hoffmannp.github.io' }); woopra.track()
 
 document.querySelector('button.hide').addEventListener('click', e => {
   document.querySelector('.explain').classList.add('hidden')

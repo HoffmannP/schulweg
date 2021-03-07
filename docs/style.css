@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+#map {
+    height: 90vh;
+}
+
+button {
+    display: none;
+}
+
+@media(min-device-width: 980px) {
+    .explain {
+        float: left;
+        width: 40%;
+        margin-right: 2%;
+    }
+
+    #map {
+        width: 58%;
+    }
+
+    .explain button.hide {
+        display: inline;
+    }
+
+    .explain.hidden button.show {
+        display: inline;
+    }
+
+    .explain.hidden p,
+    .explain.hidden button.hide {
+        display: none;
+    }
+
+    .explain.hidden {
+        float: none;
+    }
+
+    .explain.hidden+#map {
+        width: 96%;
+        margin-left: 2%;
+
+    }
+}

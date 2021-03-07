@@ -6,52 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="leaflet.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-        body {
-            font-family: 'Roboto Slab', serif;
-        }
-        #map {
-            height: 90vh;
-        }
-        button {
-            display: none;
-        }
-        @media(min-device-width: 980px) {
-            .explain {
-                float: left;
-                width: 40%;
-                margin-right: 2%;
-            }
-            #map {
-                width: 58%;
-            }
-            .explain button.hide {
-                display: inline;
-            }
-            .explain.hidden button.show {
-                display: inline;
-            }
-            .explain.hidden p,
-            .explain.hidden button.hide {
-                display: none;
-            }
-            .explain.hidden {
-                float: none;
-            }
-            .explain.hidden + #map {
-                width: 96%;
-                margin-left: 2%;
 
-        }
-    </style>
-    <script src="leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
     <link rel="preload" href="gms.geojson" as="fetch">
     <link rel="preload" href="grund.geojson" as="fetch">
     <link rel="preload" href="alle.geojson" as="fetch">
-    <link rel="preload" href="standorte.geojson" as="fetch">
+    <link rel="preload" href="schulen.geojson" as="fetch">
 </head>
 <body>
     <h1>Bereiche nächster Schulnähe</h1>
@@ -67,5 +30,5 @@
     </div>
     <div id="map"></div>
 </body>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </html>
