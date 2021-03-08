@@ -1,24 +1,12 @@
 {
   "type": "FeatureCollection",
   "name": "alle",
-  "crs": {
-    "type": "name",
-    "properties": {
-      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-    }
-  },
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "address": "Pennickental 48",
-        "naechste_i": "Talschule",
-        "naechste_1": 2.4942,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Talschule",
-        "naechste_3": 2.4942,
-        "naechste_4": "Lobdeburgschule",
-        "naechste_5": 2.5548
+        "name": "Talschule",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1209,14 +1197,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Platanenstr. 16",
-        "naechste_i": "Lobdeburgschule",
-        "naechste_1": 0.6543,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Saaletalschule",
-        "naechste_3": 0.7105,
-        "naechste_4": "Lobdeburgschule",
-        "naechste_5": 0.6543
+        "name": "Lobdeburgschule",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2011,14 +1993,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Vor dem Neutor 6",
-        "naechste_i": "Westschule",
-        "naechste_1": 1.6587,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Westschule",
-        "naechste_3": 1.6587,
-        "naechste_4": "Jenaplan-Schule",
-        "naechste_5": 1.7127
+        "name": "Westschule",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3313,14 +3289,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Unterm Sande 58a",
-        "naechste_i": "Kulturanum",
-        "naechste_1": 3.2185,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Saaletalschule",
-        "naechste_3": 3.3687,
-        "naechste_4": "Kulturanum",
-        "naechste_5": 3.2185
+        "name": "Kulturanum",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3907,14 +3877,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Am Naßtal 3",
-        "naechste_i": "Werkstattschule",
-        "naechste_1": 2.9551,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Saaletalschule",
-        "naechste_3": 3.3864,
-        "naechste_4": "Werkstattschule",
-        "naechste_5": 2.9551
+        "name": "Werkstattschule",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4741,14 +4705,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Franz-Liszt-Str. 59",
-        "naechste_i": "Wenigenjena",
-        "naechste_1": 2.1808,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Heinrich-Heine",
-        "naechste_3": 2.1927,
-        "naechste_4": "Wenigenjena",
-        "naechste_5": 2.1808
+        "name": "Wenigenjena",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5963,14 +5921,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Oßmaritzer Str. 50f",
-        "naechste_i": "An der Trießnitz",
-        "naechste_1": 0.4134,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Friedrich-Schiller",
-        "naechste_3": 0.4988,
-        "naechste_4": "An der Trießnitz",
-        "naechste_5": 0.4134
+        "name": "An der Trießnitz",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6161,14 +6113,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Camsdorfer Ufer 25",
-        "naechste_i": "Heinrich-Heine",
-        "naechste_1": 1.0801,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Heinrich-Heine",
-        "naechste_3": 1.0801,
-        "naechste_4": "Wenigenjena",
-        "naechste_5": 1.4251
+        "name": "Heinrich-Heine",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7107,14 +7053,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Emil-Wölk-Str. 17",
-        "naechste_i": "Kaleidoskop",
-        "naechste_1": 0.2946,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Saaletalschule",
-        "naechste_3": 0.2946,
-        "naechste_4": "Kaleidoskop",
-        "naechste_5": 0.2946
+        "name": "Kaleidoskop",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7297,14 +7237,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Im Nennsdorfer Felde 8",
-        "naechste_i": "Friedrich-Schiller",
-        "naechste_1": 2.8125,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Friedrich-Schiller",
-        "naechste_3": 2.8125,
-        "naechste_4": "An der Trießnitz",
-        "naechste_5": 2.9357
+        "name": "Friedrich-Schiller",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8059,14 +7993,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Laasan 1",
-        "naechste_i": "Schule am Rautal",
-        "naechste_1": 3.9805,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Schule am Rautal",
-        "naechste_3": 3.9805,
-        "naechste_4": "Wenigenjena",
-        "naechste_5": 4.6471
+        "name": "Schule am Rautal",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8873,14 +8801,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Otto-Eppenstein-Str. 2",
-        "naechste_i": "Galileo",
-        "naechste_1": 1.2164,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Saaletalschule",
-        "naechste_3": 1.9717,
-        "naechste_4": "Galileo",
-        "naechste_5": 1.2164
+        "name": "Galileo",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9303,14 +9225,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Am Herrenberge 59",
-        "naechste_i": "Südschule",
-        "naechste_1": 1.7163,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Südschule",
-        "naechste_3": 1.7163,
-        "naechste_4": "Jenaplan-Schule",
-        "naechste_5": 1.7636
+        "name": "Südschule",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -10057,14 +9973,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Ammerbacher Oberweg 60",
-        "naechste_i": "Jenaplan-Schule",
-        "naechste_1": 2.0208,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Südschule",
-        "naechste_3": 2.1277,
-        "naechste_4": "Jenaplan-Schule",
-        "naechste_5": 2.0208
+        "name": "Jenaplan-Schule",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -10855,14 +10765,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Lutherplatz 2",
-        "naechste_i": "Nordschule",
-        "naechste_1": 1.0613,
-        "naechste_2": "Grundschulen",
-        "naechste_g": "Nordschule",
-        "naechste_3": 1.0613,
-        "naechste_4": "Wenigenjena",
-        "naechste_5": 1.3251
+        "name": "Nordschule",
+        "typ": "Grundschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -11569,14 +11473,8 @@
     {
       "type": "Feature",
       "properties": {
-        "address": "Fritz-Winkler-Str. 2a",
-        "naechste_i": "Montessorischule",
-        "naechste_1": 0.7711,
-        "naechste_2": "Gesamtschulen",
-        "naechste_g": "Heinrich-Heine",
-        "naechste_3": 0.9921,
-        "naechste_4": "Montessorischule",
-        "naechste_5": 0.7711
+        "name": "Montessorischule",
+        "typ": "Gesamtschule"
       },
       "geometry": {
         "type": "MultiPolygon",

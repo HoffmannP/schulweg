@@ -1,15 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('RobotoSlab.woff2') format('woff2');
+}
 
 body {
     font-family: 'Roboto Slab', serif;
 }
 
-#map {
-    height: 90vh;
+ul {
+    line-height: 0.9;
+    padding: 0;
+}
+li:not(:first-child):before {
+    content: "| ";
+}
+li {
+    font-size: 0.66em;
+    color: #afb5c7;
+    display: inline;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
 }
 
-button {
-    display: none;
+#map {
+    height: calc(100vh - 9em);
 }
 
 @media(min-device-width: 980px) {
@@ -21,28 +40,5 @@ button {
 
     #map {
         width: 58%;
-    }
-
-    .explain button.hide {
-        display: inline;
-    }
-
-    .explain.hidden button.show {
-        display: inline;
-    }
-
-    .explain.hidden p,
-    .explain.hidden button.hide {
-        display: none;
-    }
-
-    .explain.hidden {
-        float: none;
-    }
-
-    .explain.hidden+#map {
-        width: 96%;
-        margin-left: 2%;
-
     }
 }

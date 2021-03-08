@@ -2,3 +2,4 @@ Mongo
 OSRM
 __pycache__
 Jena.osm
+node_modules

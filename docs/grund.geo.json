@@ -1,17 +1,11 @@
 {
   "type": "FeatureCollection",
   "name": "grund",
-  "crs": {
-    "type": "name",
-    "properties": {
-      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-    }
-  },
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Talschule"
+        "name": "Talschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1314,7 +1308,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Saaletalschule"
+        "name": "Saaletalschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2341,7 +2335,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Westschule"
+        "name": "Westschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3604,7 +3598,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Heinrich-Heine"
+        "name": "Heinrich-Heine"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4983,7 +4977,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Friedrich-Schiller"
+        "name": "Friedrich-Schiller"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5798,7 +5792,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Schule am Rautal"
+        "name": "Schule am Rautal"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6581,7 +6575,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Südschule"
+        "name": "Südschule"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7528,7 +7522,7 @@
     {
       "type": "Feature",
       "properties": {
-        "naechste_g": "Nordschule"
+        "name": "Nordschule"
       },
       "geometry": {
         "type": "MultiPolygon",

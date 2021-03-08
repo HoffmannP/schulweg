@@ -3,32 +3,35 @@
 <head>
     <title>Schulbereiche in Jena</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="leaflet.css" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-
-    <link rel="preload" href="gms.geojson" as="fetch">
-    <link rel="preload" href="grund.geojson" as="fetch">
-    <link rel="preload" href="alle.geojson" as="fetch">
-    <link rel="preload" href="schulen.geojson" as="fetch">
+    <link rel="stylesheet" href="style.min.css" />
+    <script type="module" src="script.min.js"></script>
 </head>
 <body>
     <h1>Bereiche nächster Schulnähe</h1>
     <div class="explain">
-<button class="show">Text anzeigen</button>
-<p>In Jena können Kinder zu Beginn ihrer Schullaufbahn an jeder Grundschule und Gemeinschaftschule mit Grundschulteil angemeldet werden. Sollte z. B. bei einer beliebten Schule - die Zahl Anmeldungen die Zahl der Plätze an der Schule übersteigen, werden die Plätze nach festen Regeln vergeben.</p>
-<p>Zuerst werden Plätze für Kinder mit besonderen Voraussetzungen (z. B. einer Behinderung) vergeben. Diese Gruppe ist aller Erfahrung nach relativ klein. Als Nächstes bekommen die den Platz, für die die gewählte Schule die (wohnort)nächste Schule ist. Danach kommen Kinder mit einem Geschwisterkind, welches bereits an der gewählten Schule ist und danach werden die Plätze an alle verbleibenden Anmeldungen vergeben. Sind während der Zuteilung der Plätze einer Schule an eine Gruppe die Zahl der Plätze erschöpft, wird gelost.</p>
-<p>Die Bestimmung der „nächsten Schule“ erfolgt dabei über die Länge des Fußweges (unabhängig davon, ob der Weg sinnvollerweise zu Fuß zurückgelegt wird). Um den Titel „nächsten Schule“ konkurrieren bei der Anmeldung an einer Grundschule ausschließlich andere (staatliche) Grundschulen, bei der Anmeldung an einer Gemeinschaftschule hingegen alle Grundschulen und Gemeinschaftsschulen mit Grundschulteil.</p>
-<p>Die Karte auf dieser Seite zeigt die Bereiche innerhalb der Stadt Jena, für die eine Schule die nächste Schule ist. Die Karte lässt sich zwischen den einzelnen Schulformen umschalten und wurde mit der freien Routenplanungssoftware <a href="http://project-osrm.org/">OSRM</a> auf der Grundlage des von <a href="https://www.openstreetmap.de/">Open Street Map</a> erstellt. Für einen Hinweis auf Fehler bei der Berechnung oder des Kartenmaterials bin ich dankbar.</p>
-<p>Ich halte nicht das Kriterium der Wohnortnähe, sondern die aktuelle Ausgestaltung für problematisch und unausgereift, diese Karte soll für diese These eine Diskussionsgrundlage bieten.</p>
-<p><a href="mailto:Berengar.Lehr@gmx.de">Berengar Lehr</a>, Jena im März 2021</p>
-<button class="hide">Text verbergen</button>
+        <p>In Jena können Kinder zu Beginn ihrer Schullaufbahn an jeder Grundschule und Gemeinschaftschule mit Grundschulteil angemeldet werden. Übersteigt bei der Anmeldung die Zahl der Anmeldungen die Aufnahmekapazität, ist den Anträgen nach folgenden Kriterien stattzugeben. Zuerst werden Plätze für Kinder mit besonderen Voraussetzungen (z. B. einer Behinderung) vergeben. Diese Gruppe ist aller Erfahrung nach relativ klein. Als Nächstes bekommen die Kinder den Platz, für die die gewählte Schule die nächstgelegene Schule ist. Danach kommen Kinder deren Geschwister bereits die Schule besuchen. Die restlichen Plätze werden an die verbliebenen Anmeldungen verteilt. Sind während der Zuteilung an eine Gruppe die Zahl die Kapazität erschöpft entscheidet das Los.</p>
+        <p>Die Bestimmung der „nächsten Schule“ erfolgt dabei über die Länge des Fußweges (unabhängig davon, ob der Weg sinnvollerweise zu Fuß zurückgelegt wird). Um den Titel „nächsten Schule“ konkurrieren bei der Anmeldung an einer Grundschule ausschließlich andere (staatliche) Grundschulen, bei der Anmeldung an einer Gemeinschaftschule hingegen alle Grundschulen und Gemeinschaftsschulen mit Grundschulteil.</p>
+        <p>Die Karte auf dieser Seite zeigt die Bereiche innerhalb der Stadt Jena, für die eine Schule die nächste Schule ist. Für die Anmeldung an einer Grundschule ist die Karte „Grundschulen“ zu verwenden, für die Anmeldung an einr Thüringer Gemeinschaftschule die Karte „Grund- und Gemeinschaftschulen“. Für einen Hinweis auf Fehler bei der Berechnung oder des Kartenmaterials bin ich dankbar.</p>
+        <p>Ich halte nicht das Kriterium der Wohnortnähe, sondern die aktuelle Ausgestaltung für problematisch und unausgereift, diese Karte soll für diese These eine Diskussionsgrundlage bieten.</p>
+        <p><a href="mailto:Berengar.Lehr@gmx.de">Berengar Lehr</a>, Jena im März 2021</p>
+        <ul class="software">
+            <li><a href="https://bildung.thueringen.de/fileadmin/schule/schulwesen/schulrecht/Thueringer_Schulgesetz_01_08_2020--31_07_2021.pdf">
+                Regelungen im Thüringer Schulgesetz, insb. § 15a Abs. 1</a></li>
+            <li><a href="https://bildung.thueringen.de/fileadmin/schule/schulwesen/schulrecht/Handreichung_Auswahlkriterien_Primarstufe.pdf">
+                Handreichung zum Aufnahmeverfahren in der Primarstufe</a></li>
+            <li><a href="https://bildung.thueringen.de/fileadmin/schule/schulwesen/schulrecht/Thueringer_Schulgesetz_Synopse_mit_Kommentierung.pdf">
+                Synopse des Schulgesetzes mit Kommentaren</a></li>
+            <li><a href="https://www.openstreetmap.de/">Kartenmaterial von OpenStreetMap</a></li>
+            <li><a href="http://project-osrm.org/">Software zur Wegeberechenung von Project OSMR</a></li>
+            <li><a href="https://github.com/HoffmannP/schulweg">Eigener Code zur Berechnung auf GitHub</a></li>
+            <li><a href="https://qgis.org/de/site/">Kartenerstellung mit QGIS</a></li>
+            <li><a href="https://leafletjs.com/">Bibliothek zur Kartendarstellung von Leaflet 1.7</a></li>
+            <li><a href="http://leaflet.github.io/Leaflet.fullscreen/">Fullscreen-Plugin</a></li>
+            <li><a href="https://www.woopra.com/">Besucherzähler von Woopra</a></li>
+        </ul>
     </div>
     <div id="map"></div>
 </body>
-<script type="module" src="script.js"></script>
 </html>
