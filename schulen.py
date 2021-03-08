@@ -25,7 +25,16 @@ def lookup_schools():
                 "Kulturanum": "Karl-Marx-Allee 7",
                 "Lobdeburgschule": "Unter der Lobdeburg 4",
                 "Montessorischule": "Friedrich-Wolf-Straße 2",
-                "Wenigenjena": "Jenzigweg 29"}},
+                "Wenigenjena": "Jenzigweg 29"}
+            "Gesamtschulen": {
+                "Grete Unrein": "August-Bebel-Straße 1"},
+            "Gymnasien": {
+                "Adolf Reichwein": "Wöllnitzer Straße 1",
+                "Angergymnasium": "Karl-Liebknecht-Straße 87",
+                "Ernst-Abbe": "Ammerbacher Straße 21",
+                "Otto-Schott-Gymnasium": "Karl-Marx-Allee 7",
+                "Carl-Zeiss-Gymnasium": "Erich-Kuithan-Straße 7",
+                "Sportgymnasium": "Wöllnitzer Staße 40"}}
         "freie": {
             "Grundschulen": {
                 "Dualingo": "Dammstraße 43",
@@ -33,7 +42,13 @@ def lookup_schools():
                 "SteinMalEins (Lobeda)": "Susanne-Bohl-Straße 2",
                 "SteinMalEins (Paradies)": "Burgauer Weg 1a"},
             "Gemeinschaftsschulen": {
-                "Leonardo": "Marie-Juchacz-Straße 1"}}}
+                "Leonardo": "Marie-Juchacz-Straße 1"}
+            "Gesamtschulen": {
+                "Waldorfschule": "Alte Hauptstraße 15",
+                "UniverSaale": "Burgauer Weg 1a"},
+            "Gymnasien": {
+                "Christliches Gymnasium": "Altenburger Straße 10"}}}
+            
 
     Grundschulen = {}
     for schule, addresse in schulenInJena["staatliche"]["Grundschulen"].items():
