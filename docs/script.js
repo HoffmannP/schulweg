@@ -1,4 +1,3 @@
-import woopra from './woopra'
 import * as Leaflet from './leaflet-src.esm'
 import './Leaflet.fullscreen'
 import createLayers from './layers'
