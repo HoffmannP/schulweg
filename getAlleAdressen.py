@@ -122,5 +122,5 @@ if __name__ == '__main__':
     import addressDb
 
     saveAllStrassen()
-    database = addressDb.adressDb()
+    database = addressDb.addressDb()
     saveAllAdressenFromStrassen(loadAllStrassen(), database)

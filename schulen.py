@@ -98,16 +98,13 @@ def nearest(home):
 
 
 def nearest_by_coord(start):
-    nearest_grund = nearest_by_type(start, 'Grundschulen')
-    nearest_gms = nearest_by_type(start, 'Gemeinschaftsschulen')
-    if nearest_grund["distance"] < nearest_gms["distance"]:
-        nearest = {**nearest_grund, 'typ': 'Grundschulen'}
-    else:
-        nearest = {**nearest_gms, 'typ': 'Gemeinschaftsschulen'}
-    return {
-        'insgesamt': nearest,
-        'grundschulen': nearest_grund,
-        'gemeinschaftsschulen': nearest_gms}
+    nearest = { 'insgesamt': { 'distance': 9999999, 'typ': 'default' }}
+    for category, cat_schulen in all_schools.items():
+        nearest[category] = nearest_by_type(start, category)
+        if nearest[category]['distance'] < nearest['insgesamt']['distance']:
+            nearest['insgesamt'] = { **nearest[category], 'typ': category }
+
+    return nearest
 
 
 if __name__ == "__main__":
