@@ -1,6 +1,7 @@
 Kartenerzeugung
 ===============
 
+* python3 schulweg.py
 * Plugin: "OSM Place Search" -> Suche "Jena" -> Objekt zu neuem Layer hinzufügen
 * Import "abstaende.geojson", "gemeinschaftsschulen.geojson", "grundschulen.geojson"
 * Layer "abstaende" Vektor->Geometrie-Werkzeuge->Voronoi-Polygone

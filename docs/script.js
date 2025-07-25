@@ -1,4 +1,3 @@
-import woopra from './woopra'
 import * as Leaflet from './leaflet-src.esm'
 import './Leaflet.fullscreen'
 import createLayers from './layers'
@@ -8,8 +7,6 @@ import './leaflet.fullscreen.css'
 import './style.css'
 
 document.addEventListener('DOMContentLoaded', function () {
-  woopra()
-
   const map = Leaflet
     .map('map', { zoomSnap: 0.2, fullscreenControl: true })
     .fitBounds([

@@ -38,50 +38,7 @@
       background-image:url(images/fullscreen@2x.png);
     }
   }
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('RobotoSlab.woff2') format('woff2');
-}
-
-body {
-    font-family: 'Roboto Slab', serif;
-}
-
-ul {
-    line-height: 0.9;
-    padding: 0;
-}
-li:not(:first-child):before {
-    content: "| ";
-}
-li {
-    font-size: 0.66em;
-    color: #afb5c7;
-    display: inline;
-}
-li a {
-    text-decoration: none;
-    color: inherit;
-}
-
-#map {
-    height: calc(100vh - 9em);
-}
-
-@media(min-device-width: 980px) {
-    .explain {
-        float: left;
-        width: 40%;
-        margin-right: 2%;
-    }
-
-    #map {
-        width: 58%;
-    }
-}/* required styles */
+/* required styles */
 
 .leaflet-pane,
 .leaflet-tile,
@@ -721,3 +678,47 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('RobotoSlab.woff2') format('woff2');
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+ul {
+    line-height: 0.9;
+    padding: 0;
+}
+li:not(:first-child):before {
+    content: "| ";
+}
+li {
+    font-size: 0.66em;
+    color: #afb5c7;
+    display: inline;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#map {
+    height: calc(100vh - 9em);
+}
+
+@media(min-device-width: 980px) {
+    .explain {
+        float: left;
+        width: 40%;
+        margin-right: 2%;
+    }
+
+    #map {
+        width: 58%;
+    }
+}
